@@ -1,0 +1,8 @@
+# Intellij
+.idea
+
+# Gradle Groovy
+gradle/
+
+# Environment
+.env

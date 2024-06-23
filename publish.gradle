@@ -1,0 +1,50 @@
+def isReleased = rootProject.getVersion().endsWith('-SNAPSHOT')
+
+publishing {
+    publications {
+        javaOSSHR(MavenPublication) {
+            pom {
+                name = 'database-framework'
+                description = 'Database framework for Java'
+                url = 'http://github.com/simaodiazz/database-framework'
+                inceptionYear = '2024'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'http://www.opensource.org/licenses/mit-license.php'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'simaodiazz'
+                        name = 'Simão Dias'
+                        email = 'simaopks009@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/simaodiazz/database-framework.git'
+                    developerConnection = 'scm:git:ssh://github.com/simaodiazz/database-framework.git'
+                    url = 'https://github.com/simaodiazz/database-framework'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = isReleased
+                    ? "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+                    : "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+            credentials {
+                username = project.findProperty('ossrh.username') ?: System.getenv('OSSRH_USERNAME')
+                password = project.findProperty('ossrh.password') ?: System.getenv('OSSRH_PASSWORD')
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.javaOSSHR
+}

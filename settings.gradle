@@ -1,0 +1,13 @@
+buildscript {
+    dependencyResolutionManagement {
+        repositories {
+            mavenCentral()
+        }
+    }
+}
+
+rootProject.name = 'database-framework'
+
+include 'database-framework-core'
+include 'database-framework-api'
+
