@@ -1,6 +1,6 @@
 package com.github.simaodiazz.database.framework.reference;
 
-public abstract class ImmutableReference<T> extends MutableReference<T> {
+public abstract class ImmutableReference<T> extends Reference<T> {
 
     private final T assigment;
 
@@ -9,7 +9,7 @@ public abstract class ImmutableReference<T> extends MutableReference<T> {
     }
 
     @Override
-    public T getAssigment() {
+    public T assigment() {
         return assigment;
     }
 

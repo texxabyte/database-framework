@@ -1,3 +1,4 @@
 package com.github.simaodiazz.database.framework;
 
-public interface Database { }
+public interface Injectable {
+}

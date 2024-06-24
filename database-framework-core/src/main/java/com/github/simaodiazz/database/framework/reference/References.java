@@ -1,11 +1,9 @@
 package com.github.simaodiazz.database.framework.reference;
 
-public abstract class Reference<T> implements Ref<T> {
-
-    public abstract T assigment();
+public abstract class References<T> implements Ref<T> {
 
     @Override
     public ReferenceCardinality getCardinality() {
-        return ReferenceCardinality.ONE;
+        return ReferenceCardinality.MANY;
     }
 }

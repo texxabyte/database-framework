@@ -1,21 +1,22 @@
 package com.github.simaodiazz.database.framework.reference;
 
-public abstract class MutableReference<T> implements Reference<T> {
+public abstract class MutableReference<T> extends Reference<T> {
 
     private T assigment;
 
-    public MutableReference() {}
+    public MutableReference() {
+    }
 
     public MutableReference(T assigment) {
         this.assigment = assigment;
     }
 
     @Override
-    public T getAssigment() {
+    public T assigment() {
         return assigment;
     }
 
-    public void setAssigment(T assigment) {
+    public void sign(T assigment) {
         this.assigment = assigment;
     }
 

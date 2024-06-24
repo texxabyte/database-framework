@@ -10,4 +10,6 @@ rootProject.name = 'database-framework'
 
 include 'database-framework-core'
 include 'database-framework-api'
+include 'database-framework-platform'
+include 'database-framework-platform-relational'
 
